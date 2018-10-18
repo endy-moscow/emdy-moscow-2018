@@ -1,0 +1,11 @@
+{
+  "name": "endy.moscow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Endy <endy124@gmail.com>",
+  "license": "ISC"
+}
