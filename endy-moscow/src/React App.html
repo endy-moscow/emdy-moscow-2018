@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://localhost:3001/#2 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="shortcut icon" href="http://localhost:3001/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3001/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-padding-before: .5rem;
+          padding-block-start: .5rem;
+  -webkit-padding-after: .5rem;
+          padding-block-end: .5rem;
+}
+.p2 {
+  font-size: 0.75rem;
+  line-height: 1.5em;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-padding-before: .5rem;
+          padding-block-start: .5rem;
+  -webkit-padding-after: .5rem;
+          padding-block-end: .5rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-padding-before: 2rem;
+          padding-block-start: 2rem;
+  -webkit-padding-after: 1rem;
+          padding-block-end: 1rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-padding-before: 1rem;
+          padding-block-start: 1rem;
+  -webkit-padding-after: 1rem;
+          padding-block-end: 1rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-padding-before: 1em;
+          padding-block-start: 1em;
+  -webkit-padding-after: 1em;
+          padding-block-end: 1em;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 800;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-padding-before: 1em;
+          padding-block-start: 1em;
+  -webkit-padding-after: 1em;
+          padding-block-end: 1em;}
+
+h5 {
+  font-size: 2rem;
+  font-weight: 400;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-padding-before: 1em;
+          padding-block-start: 1em;
+  -webkit-padding-after: 1em;
+          padding-block-end: 1em;
+}
+
+h6 {
+  font-size: 2rem;
+  font-weight: 300;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
+  -webkit-padding-before: 1em;
+          padding-block-start: 1em;
+  -webkit-padding-after: 1em;
+          padding-block-end: 1em;
+}
+</style><style type="text/css">.swiper-container {
+  width: 100vw;
+  height: 100vh;
+}
+.my-swiper-button-prev,
+.my-swiper-button-next {
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  margin-left: 24px;
+  -webkit-transition: .3s .5s;
+  transition: .3s .5s
+}
+.my-swiper-button-next {
+  right: 0;
+  margin-right: 24px;
+
+}
+.swiper-button-disabled {
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s
+}
+</style><style type="text/css">.slide-project {
+  background-color: pink;
+  width: calc(100% - 200px);
+}
+</style><style type="text/css">.app {
+}
+.Navigation {
+  position: absolute;
+  top: 0;
+  bottom: 36px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  height: 180px;
+  width: 48px;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 9999;
+}
+.navigation-point {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  -webkit-transition: .3s;
+  transition: .3s;
+  border: 2px solid black;
+}
+.navigation-point.active{
+  background-color: black;
+  width: 16px;
+  height: 16px;
+}
+.header {
+  background-color: #282c34;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.flex-centred {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fullpage-slide
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 24px;
+}
+.link {
+  color: #61dafb;
+}
+</style><style type="text/css">/**
+ * Swiper 4.4.1
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * http://www.idangero.us/swiper/
+ *
+ * Copyright 2014-2018 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: September 20, 2018
+ */
+ .swiper-container {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  /* Fix of Webkit flickering */
+  z-index: 1;
+}
+.swiper-container-no-flexbox .swiper-slide {
+  float: left;
+}
+.swiper-container-vertical > .swiper-wrapper {
+  flex-direction: column;
+}
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  box-sizing: content-box;
+}
+.swiper-container-android .swiper-slide,
+.swiper-wrapper {
+  -webkit-transform: translate3d(0px, 0, 0);
+  transform: translate3d(0px, 0, 0);
+}
+.swiper-container-multirow > .swiper-wrapper {
+  flex-wrap: wrap;
+}
+.swiper-container-free-mode > .swiper-wrapper {
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  margin: 0 auto;
+}
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+}
+.swiper-slide-invisible-blank {
+  visibility: hidden;
+}
+/* Auto Height */
+.swiper-container-autoheight,
+.swiper-container-autoheight .swiper-slide {
+  height: auto;
+}
+.swiper-container-autoheight .swiper-wrapper {
+  align-items: flex-start;
+  -webkit-transition-property: height, -webkit-transform;
+  transition-property: height, -webkit-transform;
+  transition-property: transform, height;
+  transition-property: transform, height, -webkit-transform;
+}
+/* 3D Effects */
+.swiper-container-3d {
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+}
+.swiper-container-3d .swiper-wrapper,
+.swiper-container-3d .swiper-slide,
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right,
+.swiper-container-3d .swiper-slide-shadow-top,
+.swiper-container-3d .swiper-slide-shadow-bottom,
+.swiper-container-3d .swiper-cube-shadow {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.swiper-container-3d .swiper-slide-shadow-left,
+.swiper-container-3d .swiper-slide-shadow-right,
+.swiper-container-3d .swiper-slide-shadow-top,
+.swiper-container-3d .swiper-slide-shadow-bottom {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+.swiper-container-3d .swiper-slide-shadow-left {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.swiper-container-3d .swiper-slide-shadow-right {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.swiper-container-3d .swiper-slide-shadow-top {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+.swiper-container-3d .swiper-slide-shadow-bottom {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+}
+/* IE10 Windows Phone 8 Fixes */
+.swiper-container-wp8-horizontal,
+.swiper-container-wp8-horizontal > .swiper-wrapper {
+  touch-action: pan-y;
+}
+.swiper-container-wp8-vertical,
+.swiper-container-wp8-vertical > .swiper-wrapper {
+  touch-action: pan-x;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  width: 27px;
+  height: 44px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  background-size: 27px 44px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
+}
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+  left: 10px;
+  right: auto;
+}
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23007aff'%2F%3E%3C%2Fsvg%3E");
+  right: 10px;
+  left: auto;
+}
+.swiper-button-prev.swiper-button-white,
+.swiper-container-rtl .swiper-button-next.swiper-button-white {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+}
+.swiper-button-next.swiper-button-white,
+.swiper-container-rtl .swiper-button-prev.swiper-button-white {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+}
+.swiper-button-prev.swiper-button-black,
+.swiper-container-rtl .swiper-button-next.swiper-button-black {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
+}
+.swiper-button-next.swiper-button-black,
+.swiper-container-rtl .swiper-button-prev.swiper-button-black {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23000000'%2F%3E%3C%2Fsvg%3E");
+}
+.swiper-button-lock {
+  display: none;
+}
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  -webkit-transition: 300ms opacity;
+  transition: 300ms opacity;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+.swiper-pagination.swiper-pagination-hidden {
+  opacity: 0;
+}
+/* Common Styles */
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+}
+/* Bullets */
+.swiper-pagination-bullets-dynamic {
+  overflow: hidden;
+  font-size: 0;
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  -webkit-transform: scale(0.33);
+  transform: scale(0.33);
+  position: relative;
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev {
+  -webkit-transform: scale(0.66);
+  transform: scale(0.66);
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev {
+  -webkit-transform: scale(0.33);
+  transform: scale(0.33);
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next {
+  -webkit-transform: scale(0.66);
+  transform: scale(0.66);
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next {
+  -webkit-transform: scale(0.33);
+  transform: scale(0.33);
+}
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 100%;
+  background: #000;
+  opacity: 0.2;
+}
+button.swiper-pagination-bullet {
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+  cursor: pointer;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #007aff;
+}
+.swiper-container-vertical > .swiper-pagination-bullets {
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translate3d(0px, -50%, 0);
+  transform: translate3d(0px, -50%, 0);
+}
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 6px 0;
+  display: block;
+}
+.swiper-container-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 8px;
+}
+.swiper-container-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  display: inline-block;
+  -webkit-transition: 200ms top, 200ms -webkit-transform;
+  transition: 200ms top, 200ms -webkit-transform;
+  transition: 200ms transform, 200ms top;
+  transition: 200ms transform, 200ms top, 200ms -webkit-transform;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 4px;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  -webkit-transition: 200ms left, 200ms -webkit-transform;
+  transition: 200ms left, 200ms -webkit-transform;
+  transition: 200ms transform, 200ms left;
+  transition: 200ms transform, 200ms left, 200ms -webkit-transform;
+}
+.swiper-container-horizontal.swiper-container-rtl > .swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
+  -webkit-transition: 200ms right, 200ms -webkit-transform;
+  transition: 200ms right, 200ms -webkit-transform;
+  transition: 200ms transform, 200ms right;
+  transition: 200ms transform, 200ms right, 200ms -webkit-transform;
+}
+/* Progress */
+.swiper-pagination-progressbar {
+  background: rgba(0, 0, 0, 0.25);
+  position: absolute;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: #007aff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+.swiper-container-rtl .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+}
+.swiper-container-horizontal > .swiper-pagination-progressbar,
+.swiper-container-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+  width: 100%;
+  height: 4px;
+  left: 0;
+  top: 0;
+}
+.swiper-container-vertical > .swiper-pagination-progressbar,
+.swiper-container-horizontal > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+  width: 4px;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+.swiper-pagination-white .swiper-pagination-bullet-active {
+  background: #ffffff;
+}
+.swiper-pagination-progressbar.swiper-pagination-white {
+  background: rgba(255, 255, 255, 0.25);
+}
+.swiper-pagination-progressbar.swiper-pagination-white .swiper-pagination-progressbar-fill {
+  background: #ffffff;
+}
+.swiper-pagination-black .swiper-pagination-bullet-active {
+  background: #000000;
+}
+.swiper-pagination-progressbar.swiper-pagination-black {
+  background: rgba(0, 0, 0, 0.25);
+}
+.swiper-pagination-progressbar.swiper-pagination-black .swiper-pagination-progressbar-fill {
+  background: #000000;
+}
+.swiper-pagination-lock {
+  display: none;
+}
+/* Scrollbar */
+.swiper-scrollbar {
+  border-radius: 10px;
+  position: relative;
+  -ms-touch-action: none;
+  background: rgba(0, 0, 0, 0.1);
+}
+.swiper-container-horizontal > .swiper-scrollbar {
+  position: absolute;
+  left: 1%;
+  bottom: 3px;
+  z-index: 50;
+  height: 5px;
+  width: 98%;
+}
+.swiper-container-vertical > .swiper-scrollbar {
+  position: absolute;
+  right: 3px;
+  top: 1%;
+  z-index: 50;
+  width: 5px;
+  height: 98%;
+}
+.swiper-scrollbar-drag {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  left: 0;
+  top: 0;
+}
+.swiper-scrollbar-cursor-drag {
+  cursor: move;
+}
+.swiper-scrollbar-lock {
+  display: none;
+}
+.swiper-container-fade.swiper-container-free-mode .swiper-slide {
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.swiper-container-fade .swiper-slide {
+  pointer-events: none;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+}
+.swiper-container-fade .swiper-slide .swiper-slide {
+  pointer-events: none;
+}
+.swiper-container-fade .swiper-slide-active,
+.swiper-container-fade .swiper-slide-active .swiper-slide-active {
+  pointer-events: auto;
+}
+</style><script charset="utf-8" src="./React App_files/main.cef7e0e76f72ac557aec.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.c3751b27d1ceae979646.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.ad21ad6b6541d099da37.hot-update.js"></script><script charset="utf-8" src="./React App_files/main.7cfbd460a6f38eb4dd15.hot-update.js"></script></head>
+  <body cz-shortcut-listen="true" style="overflow: hidden;">
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"><div><div><div class="App" style="height: 100%; width: 100%; position: relative; transform: translate3d(0px, -681px, 0px); transition: all 1000ms ease 0s;"><div class="fullpage-slide flex-centred" style="width: 100%; display: block; height: 681px; max-height: 681px; overflow: auto; padding-top: 0px; padding-bottom: 0px;"><h1>Привет</h1><p>Специализируюсь на дизайне интерфейсов. Помимо этого, есть опыт работы с брендингом, инфографикой, презентациями и печатными материалами.</p><p>Интересуюсь front-end разработкой. Знаю html, css, js и всякие пре- и постпроцессоры к ним. Есть базовые навыки работы в React. Самостоятельно могу делать несложные сайты.</p><p>Умею работать с 3d и анимацией. Есть опыт создания сцен в Unity. Умею пользоваться git-репозиториями.</p></div><div class="fullpage-slide flex-centred" style="width: 100%; display: block; height: 681px; max-height: 681px; overflow: auto; padding-top: 0px; padding-bottom: 0px;"><div class=""><div class="swiper-container swiper-container-horizontal"><div class="swiper-wrapper"><div class="swiper-slide flex-centred swiper-slide-active" style="background: rgb(17, 51, 85); width: 668px;"><div class="slide"><span class="p2">2018, апрель-июнь</span><h2>Название проекта</h2><p>Mentitum nam cupidatat, id summis distinguantur an an aliquip philosophari quo cillum illustriora voluptate nulla doctrina e vidisse quem eu quamquam fidelissimae est et aute officia vidisse, quae nam officia aut illum, constias quis ne cupidatat consectetur.</p></div></div><div class="swiper-slide slide flex-centred swiper-slide-next" style="background: rgb(119, 68, 34); width: 668px;"><p>Section1-Slide2</p></div><div class="swiper-slide slide flex-centred" style="background: rgb(85, 34, 34); width: 668px;"><p>Section1-Slide2</p></div><div class="swiper-slide slide flex-centred" style="background: rgb(68, 85, 34); width: 668px;"><p>Section1-Slide2</p></div><div class="swiper-slide slide flex-centred" style="background: rgb(17, 136, 34); width: 668px;"><p>Section1-Slide2</p></div></div><div class="my-swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"><img src="./React App_files/arrow-r.89f3109f.svg" alt="next"></div><div class="my-swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"><img src="./React App_files/arrow-l.f62cfced.svg" alt="prev"></div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div></div></div><div class="fullpage-slide flex-centred" style="width: 100%; display: block; height: 681px; max-height: 681px; overflow: auto; padding-top: 0px; padding-bottom: 0px;">3</div><div class="fullpage-slide flex-centred" style="width: 100%; display: block; height: 681px; max-height: 681px; overflow: auto; padding-top: 0px; padding-bottom: 0px;">4</div><div class="fullpage-slide flex-centred" style="width: 100%; display: block; height: 681px; max-height: 681px; overflow: auto; padding-top: 0px; padding-bottom: 0px;"><div><div>Device Test!</div><div>You are a desktop or laptop</div><div>You also have a huge screen</div><div>You are sized like a tablet or mobile phone though</div><div>You are portrait</div></div></div></div><div class="Navigation" style="position: fixed;z-index: 10;bottom: 20px;right: 0;transform: translate(-50%, -50%);"><a href="http://localhost:3001/#1" class="Navigation-Anchor" style="display: block; margin: 10px; border-radius: 100%; background-color: rgb(85, 98, 112); padding: 5px; transition: all 0.2s ease 0s; transform: none;"></a><a href="http://localhost:3001/#2" class="Navigation-Anchor active" style="display: block; margin: 10px; border-radius: 100%; background-color: rgb(85, 98, 112); padding: 5px; transition: all 0.2s ease 0s; transform: scale(1.3);"></a><a href="http://localhost:3001/#3" class="Navigation-Anchor" style="display: block; margin: 10px; border-radius: 100%; background-color: rgb(85, 98, 112); padding: 5px; transition: all 0.2s ease 0s; transform: none;"></a><a href="http://localhost:3001/#4" class="Navigation-Anchor" style="display: block; margin: 10px; border-radius: 100%; background-color: rgb(85, 98, 112); padding: 5px; transition: all 0.2s ease 0s; transform: none;"></a><a href="http://localhost:3001/#5" class="Navigation-Anchor" style="display: block; margin: 10px; border-radius: 100%; background-color: rgb(85, 98, 112); padding: 5px; transition: all 0.2s ease 0s; transform: none;"></a></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/0.chunk.js"></script><script src="./React App_files/main.chunk.js"></script><script src="./React App_files/main.1398cb16cd43049cadec.hot-update.js"></script>
+
+</body></html>

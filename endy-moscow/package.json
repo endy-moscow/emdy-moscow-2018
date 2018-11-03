@@ -3,8 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "VK-Promise": "^0.2.91",
+    "aphrodite": "^2.2.3",
+    "google-sheets-node-api": "^0.3.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-fullpage": "^0.1.19",
+    "react-google-sheets": "^0.4.0",
+    "react-grid-gallery": "^0.5.3",
+    "react-id-swiper": "^1.6.8",
+    "react-images": "^0.5.19",
+    "react-responsive": "^5.0.0",
     "react-scripts": "2.0.5"
   },
   "scripts": {

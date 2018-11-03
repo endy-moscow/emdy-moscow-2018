@@ -1,0 +1,4 @@
+.slide-project {
+  background-color: pink;
+  width: calc(100% - 200px);
+}

@@ -1,32 +1,53 @@
-.App {
-  text-align: center;
-}
+@import "Swiper.css";
+@import "Project.css";
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.app {
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Navigation {
+  position: absolute;
+  top: auto !important;
+  bottom: 36px !important;
+  right: 30px !important;
+  z-index: 9999;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-direction: column;
+  transform: translate(0,0) !important;
+  transition: 1s;
 }
-
-.App-link {
+.Navigation > a {
+  border-radius: 50%;
+  transition: .4s;
+  border: 2px solid black;
+  background-color: black !important;
+}
+.Navigation > a.active{
+  transition: .4s;
+}
+.content-wrapper {
+  height: auto;
+  background-color: rgba(255, 0, 0, 0.1);
+  width: 50%;
+  align-self: center;
+}
+.flex-centred {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+.fullpage-slide{
+  justify-content: center;
+  align-items: stretch;
+}
+.slide {
+  height: 100%;
+  display: flex;
+  background-color: rgba(255, 0, 255, 0.1);
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
