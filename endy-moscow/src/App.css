@@ -5,9 +5,10 @@
 }
 .Navigation {
   position: absolute;
-  top: auto !important;
-  bottom: 36px !important;
-  right: 30px !important;
+  top: 8px !important;
+  bottom: auto !important;
+  right: auto !important;
+  left: 6px !important;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -18,18 +19,43 @@
 }
 .Navigation > a {
   border-radius: 50%;
-  transition: .4s;
-  border: 2px solid black;
-  background-color: black !important;
+  background-color: white !important;
+  padding: 4px !important;
 }
 .Navigation > a.active{
-  transition: .4s;
+  transition: all 1s ease 0s !important;
+  background-color: red !important;
+  padding: 4px !important;
+  box-sizing: border-box !important;
 }
+
+/* first dot */
+.Navigation > a.active:nth-child(1){
+  background-color: green !important
+}
+/* second dot */
+.Navigation > a.active:nth-child(2){
+  background-color: blue !important
+}
+/* third dot */
+.Navigation > a.active:nth-child(3){
+  background-color: yellow !important
+}
+/* fourth dot */
+.Navigation > a.active:nth-child(4){
+  background-color: pink !important
+}
+/* fifth dot */
+.Navigation > a.active:nth-child(5){
+  background-color: orange !important
+}
+
 .content-wrapper {
   height: auto;
-  background-color: rgba(255, 0, 0, 0.1);
-  width: 50%;
+  max-width: 960px;
+  width: 60%;
   align-self: center;
+  z-index: 2;
 }
 .flex-centred {
   display: flex;
@@ -43,7 +69,6 @@
 .slide {
   height: 100%;
   display: flex;
-  background-color: rgba(255, 0, 255, 0.1);
   flex-direction: column;
   justify-content: center;
   align-items: start;

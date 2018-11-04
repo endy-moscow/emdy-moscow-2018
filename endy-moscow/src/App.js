@@ -6,14 +6,16 @@ import './App.css'
 import 'react-id-swiper/src/styles/css/swiper.css'
 import arrowL from './arrow-l.svg'
 import arrowR from './arrow-r.svg'
-// import AboutMe from './AboutMe.js'
 import MyLightbox from './MyLightbox'
-import MGT from './MGT.js'
+import CocaCola from './Coca-Cola.js'
 
 class ArrowL extends Component{
   render() {
     return(
-      <img src={arrowL} alt="prev" />
+      <img src={arrowL} alt="prev" style={{
+          'width':'10px',
+          'height':'10px',
+        }}/>
     )
   }
 }
@@ -41,8 +43,8 @@ class App extends Component {
     return (
       <SectionsContainer {...fullpageParams}>
 
-        <MyLightbox/>
-        <MGT/>
+        <CocaCola/>
+        <CocaCola/>
         <Section>
           3
         </Section>

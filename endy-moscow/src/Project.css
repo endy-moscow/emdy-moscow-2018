@@ -1,4 +1,26 @@
-.slide-project {
-  background-color: pink;
-  width: calc(100% - 200px);
+.slide--coca-cola{
+  background: #fe001a;
+  background-size: 100% auto;
+  background-position: 50% 50%;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+
+.fade{
+  opacity: .77;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+.paper {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.content-wrapper--coca-cola > p {
+  color: #a10001;
+  padding: 36px 36px 48px;
 }

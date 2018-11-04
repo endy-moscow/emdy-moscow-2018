@@ -2,33 +2,47 @@
   height: 100%;
   width: auto;
 }
+.my-swiper-button-wrapper{
+  background-color: white;
+}
+.my-swiper-button-prev::before,
+.my-swiper-button-next::before {
+
+}
 .my-swiper-button-prev,
 .my-swiper-button-next {
   position: absolute;
   top: calc(49% - 48px);
   width: 36px;
   height: 36px;
-  padding: 48px;
+  background-color: #333;
   z-index: 10;
   cursor: pointer;
   transition: .3s .5s
 }
 .my-swiper-button-next {
-  right: 0;
-
+  background: url('./arrow-r.svg') no-repeat;
+  background-size: 100% auto;
+  background-position: 50% 50%;
+  right: 12px;
 }
+.my-swiper-button-prev{
+  background: url('./arrow-l.svg') no-repeat;
+  background-size: 100% auto;
+  background-position: 50% 50%;
+  left: 12px;
+}
+
 .swiper-button-disabled {
   opacity: 0;
   transition: .3s
 }
 @media screen
-  and (min-width: 1200px) {
+  and (min-width: 1800px) {
     .my-swiper-button-prev{
-      top: calc(49% - 124px);
-      padding: 124px;
+
     }
     .my-swiper-button-next {
-      top: calc(49% - 124px);
-      padding: 124px;
+
     }
 }
